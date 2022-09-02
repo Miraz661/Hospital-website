@@ -1,0 +1,625 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: linear-gradient(to top,rgb(250, 50, 50),rgb(134, 100, 107));
+    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+            /* All common css */
+
+.container{
+    padding: 0 100px;
+}
+hr{
+    border-color: white;
+    margin: 0 10px;
+}
+.loading{
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    position: fixed;
+    z-index: 3;
+}
+.load{
+    position: absolute;
+    color: black;
+    font-size: 25px;
+    animation: loading 1.5s linear infinite alternate;
+}
+.spinner{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.load-spin{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 15px solid transparent;
+    mix-blend-mode: overlay;
+}
+.load-spin1{
+    border-top: 5px solid lightgreen;
+    animation: spinning 1.5s linear infinite;
+}
+.load-spin2{
+    border-top: 5px solid lightblue;
+    animation: spinning 2.5s ease-in infinite;
+}
+.load-spin3{
+    border-top: 5px solid crimson;
+    animation: spinning 1s ease-in-out infinite;
+}
+.load-spin4{
+    border-top: 5px solid lightseagreen;
+    animation: spinning 2s ease infinite;
+}
+.load-spin5{
+    border-top: 5px solid lightslategray;
+    animation: spinning 3s linear infinite;
+}
+.load-spin6{
+    border-top: 5px solid darkolivegreen;
+    animation: spinning 3s linear infinite;
+}
+.load-spin7{
+    border-top: 5px solid lightcoral;
+    animation: spinning 3s linear infinite;
+}
+.load-spin8{
+    border-top: 5px solid rgb(220, 157, 20);
+    animation: spinning 3s linear infinite;
+}
+@keyframes loading{
+    0%,100%{
+        opacity: 1;
+        color: gray;
+    }
+    25%,75%{
+        opacity: .5;
+        color: green;
+    }
+    50%{
+        opacity: .1;
+        color: crimson;
+    }
+}
+@keyframes spinning{
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+main{
+    display: none;
+}
+
+
+            /* Nav Bar styling  */
+
+
+
+.navBar{
+        position:fixed;
+        background: linear-gradient(to top,rgb(250, 50, 50,0.4),rgb(134, 100, 107,0.4));
+        width: 100%;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 35px 100px;
+        transition: all 0.4s ease;
+        z-index: 2;
+        animation: navBar 1s linear 1;
+        box-shadow: 0px 0px 5px 1px black;
+    }
+    .sticky{
+        padding: 20px 100px;
+        background: linear-gradient(to top,rgb(250, 50, 50),rgb(134, 100, 107));
+    }
+    .logo a{
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        animation: afterLoading 0.5s linear;
+        animation-delay: 3s;
+        animation-fill-mode: forwards;
+        visibility: hidden;
+        color: white;
+        text-decoration: none;
+    }
+    .navMenubars{
+        display: none;
+    }
+    .menuSection{
+        display: block;
+        animation: afterLoading 0.5s linear;
+        animation-fill-mode: forwards;
+        visibility: hidden;
+        animation-delay: 3s;
+    }
+    .menuSection ul{
+        display: flex;
+        color: white;
+        list-style: none;
+    }
+    .menuSection ul li{
+        margin: 0 30px;
+    }
+    .menuSection a{
+        text-decoration: underline 3px rgba(220, 20, 60, 0);
+        color: white;
+        font-size: 18px;
+        transition: all 0.4s ease;
+    }
+    .menuSection li:hover a{
+        text-decoration: underline 3px yellowgreen;
+        color: yellowgreen;
+        transform: scale(1.02);
+    }
+    .emergency-contact-menu ul li{
+        list-style: none;
+        font-size: 18px;
+    }
+    .emergency-contact-menu{
+        animation: afterLoading 0.5s linear;
+        animation-fill-mode: forwards;
+        visibility: hidden;
+        animation-delay: 3s;
+    }
+    
+    
+    
+                /* Hoem section styling  */
+    
+    
+    #home{
+        background: url(../images/home-background.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: #fff;
+        overflow: hidden;
+    }
+    .home{
+        background-color: rgba(0, 0, 0, 0.432);
+        padding: 0 0 30px 0;
+    }
+    .homeHead{
+        animation: afterLoading 0.5s linear;
+        animation-fill-mode: forwards;
+        visibility: hidden;
+        animation-delay: 2s;
+        padding: 120px 0 70px 0;
+    }
+    .homeHead h2{
+        text-align: center;
+        font-size: 40px;
+    }
+    .homeContent{
+        animation: afterLoading 0.5s linear;
+        animation-fill-mode: forwards;
+        visibility: hidden;
+        animation-delay: 2s;
+    }
+    .homeContent-vision{
+        padding: 10px;
+        margin: 0 0 20px 0;
+        background-color: rgba(34, 34, 34, 0.596);
+        border-radius: 5px;
+        box-shadow: 5px 5px 5px 2px #222;
+    }
+    .vision-top h2,.mission-top h2{
+        font-size: 30px;
+    }
+    .vision-top p,.mission-top p{
+        font-size: 20px;
+        padding: 15px 0;
+    }
+    .vision-bottom p,.mission-bottom p{
+        text-align: justify;
+        padding: 10px 0px;
+    }
+    .homeContent-mission{
+        padding: 10px;
+        background-color: rgba(34, 34, 34, 0.596);
+        border-radius: 5px;
+        box-shadow: 5px 5px 5px 2px #222;
+        margin: 0 0 100px 0;
+    }
+    
+    
+                /* Service section styling  */
+    
+    .service{
+        animation: afterLoading 0.5s linear;
+        animation-fill-mode: forwards;
+        visibility: hidden;
+        animation-delay: 2s;
+    }
+    .serviceHead{
+        color: white;
+        font-size: 30px;
+        text-align: center;
+    }
+    .service{
+        padding: 100px 0;
+    }
+    .serviceContent{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 90px;
+    }
+    .serviceContent-left{
+        width: 40%;
+    }
+    .serviceContent-right{
+        width: 40%;
+    }
+    .serviceContent-left h2,.serviceContent-right h2{
+        color: white;
+        font-size: 25px;
+        padding-bottom: 20px;
+    }
+    .serviceContent-left li,.serviceContent-right li{
+        list-style: none;
+        padding: 10px  0;
+    }
+    .serviceContent-left li a,.serviceContent-right li a{
+        display: block;
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        padding: 10px;
+        text-align: center;
+        border: 3px solid white;
+        border-radius: 5px;
+        transition: all 0.4s ease;
+    }
+    .serviceContent-left li a:hover,.serviceContent-right li a:hover{
+        background-color: white;
+        color: crimson;
+        transform: scale(1.2);
+    }
+    
+    
+    
+                /* About section styligng */
+    
+    
+    
+    #about{
+        padding: 60px 0;
+    }
+    .about{
+        animation: afterLoading 0.5s linear;
+        animation-fill-mode: forwards;
+        visibility: hidden;
+        animation-delay: 2s;
+    }
+    .aboutHead{
+        color: white;
+        font-size: 40px;
+        text-align: center;
+        padding-bottom: 40px;
+    }
+    .aboutContent{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .aboutContent-left{
+        padding: 0 10px;
+    }
+    .aboutContent-left h2{
+        font-size: 25px;
+        padding-bottom: 20px;
+        color: white;
+    }
+    .aboutContent-left p{
+        color: white;
+        font-size: 18px;
+        line-height: 30px;
+        text-align: justify;
+    }
+    .aboutContent-right{
+        padding: 0 10px;
+    }
+    .aboutContent-right img{
+        width: 400px;
+        height: 300px;
+        border-radius: 5px;
+        box-shadow: 20px -20px 10px #222;
+    }
+    
+    
+            /* footer section styling */
+    
+    
+    
+    footer{
+        background-color: black;
+        color: white;
+        padding: 20px 100px;
+    }
+    .footer{
+        text-align: center;
+    }
+    .contact{
+        padding-bottom: 30px;
+    }
+    .contact h2{
+        font-size: 25px;
+    }
+    .contact p,.copyright{
+        font-size: 18px;
+    }
+    
+    
+    
+    
+    
+    
+    
+    @keyframes navBar{
+        0%{
+            transform: translateY(-200px);
+            visibility: hidden;
+        }
+        100%{
+            transform: translate(0);
+            visibility: visible;
+        }
+    }
+    @keyframes afterLoading{
+        0%{
+            transform: translateY(50px);
+            visibility: hidden;
+        }
+        100%{
+            transform: translateY(0);
+            visibility: visible;
+        }
+    }
+    
+
+
+
+
+                                /* media querys */
+
+@media screen and (max-width: 350px){
+    .container{
+        padding: 0 5px;
+    }
+    .navBar a{
+        font-size: 18px;
+    }
+    .homeHead h2{
+        font-size: 25px;
+    }
+    .homeContent-vision h2,.homeContent-mission h2{
+        font-size: 20px;
+    }
+    .vision-top p,.mission-top p{
+        font-size: 17px;
+    }
+    .vision-bottom p,.mission-bottom p{
+        font-size: 14px;
+    }
+    .serviceHead h2{
+        font-size: 25px;
+    }
+    .serviceContent-left h2,.servicecontent-right h2{
+        font-size: 20px;
+    }
+    .serviceContent-left ul li a,.serviceContent-right ul li a{
+        font-size: 14px;
+    }
+
+    .aboutHead h2{
+        font-size: 25px;
+    }
+    .aboutContent-left h2{
+        font-size: 20px;
+    }
+    .aboutContent-left p{
+        font-size: 14px;
+    }
+    footer{
+        padding: 20px
+    }
+}
+
+@media screen and (max-width: 630px) {
+    .container{
+        padding: 0 10px;
+    }
+
+
+                    /* Nav Bar styling  */
+
+
+    .navBar{
+        animation: none;
+        padding: 35px 20px;
+    }
+    .sticky{
+        padding: 20px 20px;
+        background: linear-gradient(to top,rgb(250, 50, 50),rgb(134, 100, 107));
+    }
+    .sticky .menuSection{
+        top: -10px !important;
+    }
+    .navMenubars{
+        display: block;
+        animation: afterLoading 0.5s linear;
+        animation-fill-mode: forwards;
+        visibility: hidden;
+        animation-delay: 3s;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    .menuSection{
+        display: none;
+        position: absolute;
+        animation: none;
+        visibility: visible;
+        top: 20px !important;
+        left: 50%;
+        transform: translate(-50%,50%);
+        background-color: rgba(34, 34, 34, 0.712);
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .menuSection ul{
+        display: flex;
+        flex-direction: column;
+        color: white;
+        list-style: none;
+        text-align: center;
+    }
+    .menuSection ul li{
+        margin: 0;
+        padding: 15px 20px;
+    }
+    .emergency-contact-menu{
+        display: none;
+    }
+
+    .homeContent{
+        text-align: center;
+    }
+    .homeHead h2{
+        font-size: 35px;
+    }
+    .serviceHead h2{
+        font-size: 35px;
+    }
+    .serviceContent-left{
+        padding-bottom: 30px;
+    }
+    .serviceContent-left,.serviceContent-right{
+        width: 100%;
+    }
+    .serviceContent{
+        flex-direction: column;
+        align-items: center;
+    }
+    .aboutHead h2{
+        font-size: 35px;
+    }
+    .aboutContent{
+        text-align: center;
+        flex-direction: column;
+    }
+    .aboutContent-left{
+        padding: 0 0 50px 0;
+    }
+    .aboutContent-right img{
+        width: 100%;
+        height: 100%;
+        box-shadow: none;
+    }
+
+}
+
+
+
+@media screen and (max-width: 1100px) {
+    .container{
+        padding: 0 30px;
+    }
+
+
+                        /* Nav Bar styling  */
+
+
+    .navBar{
+        animation: none;
+        padding: 35px 20px;
+    }
+    .sticky{
+        padding: 20px 20px;
+        background: linear-gradient(to top,rgb(250, 50, 50),rgb(134, 100, 107));
+    }
+    .sticky .menuSection{
+        top: -2px;
+    }
+    .navMenubars{
+        display: block;
+        animation: afterLoading 0.5s linear;
+        animation-fill-mode: forwards;
+        visibility: hidden;
+        animation-delay: 3s;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    .menuSection{
+        display: none;
+        position: absolute;
+        animation: none;
+        visibility: visible;
+        top: 27px;
+        left: 50%;
+        transform: translate(-50%,50%);
+        background-color: rgba(34, 34, 34, 0.712);
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .menuSection ul{
+        display: flex;
+        flex-direction: column;
+        color: white;
+        list-style: none;
+        text-align: center;
+    }
+    .menuSection ul li{
+        margin: 0;
+        padding: 15px 20px;
+    }
+
+
+
+                        /* about section  */
+
+
+    .aboutHead h2{
+        font-size: 35px;
+    }
+    .aboutContent{
+        text-align: center;
+        flex-direction: column;
+    }
+    .aboutContent-left{
+        padding: 0 0 50px 0;
+    }
+    .aboutContent-right img{
+        width: 100%;
+        height: 100%;
+    }
+                        
+    
+
+
+
+
+
+
+}
+
